@@ -1,8 +1,31 @@
 <div>
-   <h1>
-    Ola LW
-   </h1>
-   <p>
-    Meu nome é {{$name}}
-   </p>
+    <h1>
+        {{$titleHead}}
+    </h1>
+    <label for="basic-url" class="form-label">Título</label>
+    <div class="input-group mb-3">
+
+        <input type="text" wire:model.debounce.1500ms="title" class="form-control" placeholder="Digite aqui" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <label for="basic-url" class="form-label">Texto</label>
+    <div class="form-floating">
+        <textarea wire:model="body" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea">Digite seu texto aqui</label>
+    </div>
+    </br>
+    <label for="basic-url" class="form-label">Escolha o país</label>
+    <div class="input-group mb-3">
+        <select wire:model="country" class="form-select" size="3" aria-label="size 3 select example">
+            <option value="Union King">UK</option>
+            <option value="Brazil">BR</option>
+            <option value="United States of America">USA</option>
+        </select>
+
+    </div>
+    </br>
+    <p>Título: {{$title}}</p>
+    <p>Texto: {{$body}}</p>
+    @if($active) <p> Ativo </p> @endif
+    <p>País: {{ $country }} </p>
 </div>
