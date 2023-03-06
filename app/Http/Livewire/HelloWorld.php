@@ -12,12 +12,13 @@ class HelloWorld extends Component
     public $title = '';
     public $body;
     public $active = false;
-    public $country = "BR";
+    public $country;
 
-    public function resetTitle($title, $body)
+    public function resetTitle($title, $body, $country)
     {
         $this->title = $title;
         $this->body = $body;
+        $this->country = $country;
     }
 
     public function render()

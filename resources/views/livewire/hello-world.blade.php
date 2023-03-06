@@ -24,7 +24,7 @@
         </select>
 
     </div>
-    <button wire:click="resetTitle('' , '')">Limpar</button>
+    <button wire:click="resetTitle('' , '' , '')">Limpar</button>
     </br>
     <hr>
     <p>Título: {{$title}}</p>
