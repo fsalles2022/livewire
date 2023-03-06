@@ -5,13 +5,14 @@
     <label for="basic-url" class="form-label">Título</label>
     <div class="input-group mb-3">
 
-        <input type="text" wire:model.debounce.1500ms="title" class="form-control" placeholder="Digite aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" wire:model.lazy="title" class="form-control" placeholder="Digite aqui seu título">
     </div>
 
     <label for="basic-url" class="form-label">Texto</label>
-    <div class="form-floating">
-        <textarea wire:model="body" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-        <label for="floatingTextarea">Digite seu texto aqui</label>
+    <div class="input-group mb-3">
+
+        <textarea type="text" wire:model="body" class="form-control" placeholder="Digite aqui seu texto">
+        </textarea>
     </div>
     </br>
     <label for="basic-url" class="form-label">Escolha o país</label>
@@ -23,7 +24,9 @@
         </select>
 
     </div>
+    <button wire:click="resetTitle('' , '')">Limpar</button>
     </br>
+    <hr>
     <p>Título: {{$title}}</p>
     <p>Texto: {{$body}}</p>
     @if($active) <p> Ativo </p> @endif
