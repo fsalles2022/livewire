@@ -5,7 +5,7 @@
     <label for="basic-url" class="form-label">Título</label>
     <div class="input-group mb-3">
 
-        <input type="text" wire:model.lazy="title" class="form-control" placeholder="Digite aqui seu título">
+        <input type="text" wire:model="title" class="form-control" placeholder="Digite aqui seu título">
     </div>
 
     <label for="basic-url" class="form-label">Texto</label>
@@ -31,4 +31,8 @@
     <p>Texto: {{$body}}</p>
     @if($active) <p> Ativo </p> @endif
     <p>País: {{ $country }} </p>
+
+    <p>MountCall: {{$mountCall}}</p>
+    <p>hydrateCall: {{$hydrateCall}}</p>
+    <p>updateCall  : {{$updateCall}}</p>
 </div>
