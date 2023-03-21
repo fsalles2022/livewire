@@ -31,10 +31,17 @@ class Posts extends Component
         );
     }
 
+
+
     public function clearForm()
     {
         $this->title = "";
         $this->body = "";
+    }
+
+    public function deletePost($id)
+    {
+        Post::findOrFail($id)->delete();
     }
 
     public function render()

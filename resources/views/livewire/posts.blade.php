@@ -42,16 +42,14 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="mt-4 p-4">
-        <ul>
-            @foreach($posts as $post)
-            <li>Post ID: {{$post->id}}</li>
-            <li>Title: {{$post->title}}</li>
-            <li>Body: {{$post->body}}</li>
+        <div class="mt-4 p-4">
+            <ul>
+                @foreach($posts as $post)
+                <li>Post ID: {{$post->id}} - Body: {{$post->title}} <button class="text-red-500" wire:click="deletePost({{$post->id}})">Delete</button></li>
+                @endforeach
+            </ul>
 
-            @endforeach
-        </ul>
-
+        </div>
     </div>
+
 </div>
