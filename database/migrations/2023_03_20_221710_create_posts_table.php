@@ -11,6 +11,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+     
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
@@ -20,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
