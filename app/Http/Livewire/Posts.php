@@ -14,17 +14,21 @@ class Posts extends Component
         'body' => 'required|min:10',
     ];
 
-n 
+
+    public function updated($field)
+    {
+        $this->validateOnly($field);
+    }
 
     public function createPost()
     {
         $this->validate();
         Post::create(
-                [
-                    'title' => $this->title,
-                    'body' => $this->body
-                ]
-            );
+            [
+                'title' => $this->title,
+                'body' => $this->body
+            ]
+        );
     }
 
     public function clearForm()
@@ -35,10 +39,11 @@ n
 
     public function render()
     {
-        return view('livewire.posts',
-        [
-            'posts' => Post::all()
-        ]
-    );
+        return view(
+            'livewire.posts',
+            [
+                'posts' => Post::all()
+            ]
+        );
     }
 }
